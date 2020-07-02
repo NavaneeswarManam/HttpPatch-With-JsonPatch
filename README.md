@@ -20,3 +20,14 @@ We can achieve this feature with JSON Patch.
 JSON Patch is a format for describing changes to a JSON document. It can be used to avoid sending a whole document when only a part has changed. 
 When used in combination with the HTTP PATCH method, it allows partial updates for HTTP APIs in a standards-compliant way.
 
+## Package installation
+
+To enable JSON Patch support in your app, complete the following steps:
+
+1. Install the [`Microsoft.AspNetCore.Mvc.NewtonsoftJson`](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.NewtonsoftJson/) NuGet package.
+
+    ```csharp
+    services
+        .AddControllers()
+        .AddNewtonsoftJson();
+    ```
