@@ -11,7 +11,7 @@ Assume you have a complex object with 100 fields, Out of 100 fields you just nee
 # What will you do?
 Will you pass all fields in request? or only two fields that you want to update?
 
-Obversely I will pass fields that want to update. So that fewer data will transfer over the network.
+Obviously we will pass fields that want to update. So that fewer data will transfer over the network.
 
 We can achieve this feature with JSON Patch.  
 
