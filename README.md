@@ -46,29 +46,33 @@ While requesting the `HttpPatch` method. We need to pass three values (op, path,
 
 ```json
 [
-    {
-        "empUId": 10,
-        "dateofBirth": "1991-10-12T00:00:00",
-        "employeeName": {
-            "empId": 1,
-            "firstName": "Manam",
-            "lastName": "Navaneeswar",
-            "middleName": null,
-            "empUId": 10
-        },
-        "employeeEmail": {
-            "emailId": 1,
-            "email": "eswarbe2009@gmail.com",
-            "emailType": "Personal",
-            "empUId": 10
-        },
-        "employeePhone": {
-            "phoneId": 1,
-            "phoneNumber": "9966661711",
-            "phoneType": "Home",
-            "empUId": 10
-        }
-    }
+  {
+    "empUId": 10,
+    "dateofBirth": "1991-10-12T00:00:00",
+    "employeeName": {
+      "empId": 1,
+      "firstName": "Manam",
+      "lastName": "Navaneeswar",
+      "middleName": null,
+      "empUId": 10
+    },
+    "employeeEmails": [
+      {
+        "emailId": 2,
+        "email": "naveen.kumar@gmail.com",
+        "emailType": "Personal",
+        "empUId": 20
+      }
+    ],
+    "employeePhones": [
+      {
+        "phoneId": 1,
+        "phoneNumber": "9966661711",
+        "phoneType": "Home",
+        "empUId": 10
+      }
+    ]
+  }
 ]
 ```
 
@@ -81,14 +85,29 @@ While requesting the `HttpPatch` method. We need to pass three values (op, path,
         "path": "/dateofBirth",
         "value": "1991-10-13T00:00:00"
     },
+     {
+        "op": "add",
+        "path": "/dateofBirth",
+        "value": "1991-10-18T00:00:00"
+    },
     {
-        "op":"add",
-        "path": "/employeeEmail",
+        "op":"replace",
+        "path": "/employeeEmails/0",
         "value": {
             "emailId": 1,
-            "email": "eswarbe2009@out.com",
-            "emailType": "Personal",
-            "empUId": 10
+            "email": "abc@out.com1",
+            "emailType": "Personal1",
+            "empUId": 101
+        }
+    },
+    {
+        "op":"add",
+        "path": "/employeeEmails/-",
+        "value": {
+            "emailId": 3,
+            "email": "eswarbe2009@out.com1",
+            "emailType": "Personal1",
+            "empUId": 101
         }
     }
 ]
@@ -101,7 +120,7 @@ Here's the resource after applying the preceding JSON Patch document:
 ```json
 {
     "empUId": 10,
-    "dateofBirth": "1991-10-13T00:00:00",
+    "dateofBirth": "1991-10-18T00:00:00",
     "employeeName": {
         "empId": 1,
         "firstName": "Manam",
@@ -109,18 +128,28 @@ Here's the resource after applying the preceding JSON Patch document:
         "middleName": null,
         "empUId": 10
     },
-    "employeeEmail": {
-        "emailId": 1,
-        "email": "eswarbe2009@out.com",
-        "emailType": "Personal",
-        "empUId": 10
-    },
-    "employeePhone": {
-        "phoneId": 1,
-        "phoneNumber": "9966661711",
-        "phoneType": "Home",
-        "empUId": 10
-    }
+    "employeeEmails": [
+        {
+            "emailId": 1,
+            "email": "abc@out.com1",
+            "emailType": "Personal1",
+            "empUId": 101
+        },
+        {
+            "emailId": 3,
+            "email": "eswarbe2009@out.com1",
+            "emailType": "Personal1",
+            "empUId": 101
+        }
+    ],
+    "employeePhones": [
+        {
+            "phoneId": 1,
+            "phoneNumber": "9966661711",
+            "phoneType": "Home",
+            "empUId": 10
+        }
+    ]
 }
 ```
 
