@@ -1,4 +1,4 @@
-﻿using HttpPatchExe.Model;
+using HttpPatchExe.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,19 +22,25 @@ namespace HttpPatchExe
                         LastName = "Navaneeswar",
                         EmpUId = 10,
                     },
-                    EmployeeEmail = new EmployeeEmail
+                    EmployeeEmails = new List<EmployeeEmail>
                     {
-                        EmailId = 1,
-                        Email = "eswarbe2009@gmail.com",
-                        EmailType = "Personal",
-                        EmpUId = 10,
+                        new EmployeeEmail
+                        {
+                            EmailId = 2,
+                            Email = "naveen.kumar@gmail.com",
+                            EmailType = "Personal",
+                            EmpUId = 20
+                        }
                     },
-                    EmployeePhone = new EmployeePhone
+                    EmployeePhones = new List<EmployeePhone>
                     {
-                        PhoneId = 1,
-                        PhoneNumber = "9966661711",
-                        PhoneType = "Home",
-                        EmpUId = 10,
+                        new EmployeePhone
+                        {
+                            PhoneId = 1,
+                            PhoneNumber = "9966661711",
+                            PhoneType = "Home",
+                            EmpUId = 10,
+                        }
                     }
                 },new Employee
                 {
@@ -47,19 +53,25 @@ namespace HttpPatchExe
                         LastName = "Kumar",
                         EmpUId = 20,
                     },
-                    EmployeeEmail = new EmployeeEmail
+                    EmployeeEmails = new List<EmployeeEmail>
                     {
-                        EmailId = 2,
-                        Email = "naveen.kumar@gmail.com",
-                        EmailType = "Personal",
-                        EmpUId = 20,
+                        new EmployeeEmail
+                        {
+                            EmailId = 2,
+                            Email = "naveen.kumar@gmail.com",
+                            EmailType = "Personal",
+                            EmpUId = 20
+                        }
                     },
-                    EmployeePhone = new EmployeePhone
+                    EmployeePhones = new List<EmployeePhone>
                     {
-                        PhoneId = 2,
-                        PhoneNumber = "9182510378",
-                        PhoneType = "Home",
-                        EmpUId = 20,
+                        new EmployeePhone
+                        {
+                            PhoneId = 1,
+                            PhoneNumber = "9966661711",
+                            PhoneType = "Home",
+                            EmpUId = 10,
+                        }
                     }
                 }
             };
