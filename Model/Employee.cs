@@ -10,8 +10,8 @@ namespace HttpPatchExe.Model
         public int EmpUId { get; set; }
         public DateTime DateofBirth { get; set; }
         public EmployeeName EmployeeName { get; set; }
-        public EmployeeEmail EmployeeEmail { get; set; }
-        public EmployeePhone EmployeePhone { get; set; }
+         public List<EmployeeEmail> EmployeeEmails { get; set; }
+        public List<EmployeePhone> EmployeePhones { get; set; }
     }
     public class EmployeeName
     {
